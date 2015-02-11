@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+	<template name="Edeveloper layout" id="edeveloper_layout" inherit_id="report.layout">
+		 <!-- Add webfonts -->
+		<xpath expr="//head/link[@href='/web/static/lib/fontawesome/css/font-awesome.css']" position="after"> 
+			<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' /> 
+		</xpath>
+		<!-- Add custom style -->
+		<xpath expr="//head/style" position="replace">
+			<style type="text/css"> 
+				body { color: #414141 !important; font-family: 'Droid Sans', sans-serif; } 
+				.border-black td { border-top: 1px solid #f90 !important; } 
+				.table-condensed &gt; thead &gt; tr &gt; th { border-bottom: 1px solid #F90 !important; } 
+				.table-condensed &gt; thead &gt; tr.border-black &gt; th { border-bottom: 1px solid #ddd !important; }
+			</style>
+		</xpath>
+	</template>
+    </data>
+</openerp>
+

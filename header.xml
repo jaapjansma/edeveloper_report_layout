@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+	<template name="Edeveloper header layout" id="edeveloper_header_layout" inherit_id="report.external_layout_header">
+		<!-- Change logo -->
+		<xpath expr="//div[@class='header']" position="replace">
+<div class="header"> <div class="row"> <div class="col-xs-4 col-xs-offset-8"> <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 90px;"/> </div> </div> </div>
+		</xpath>
+	</template>
+    </data>
+</openerp>
+
