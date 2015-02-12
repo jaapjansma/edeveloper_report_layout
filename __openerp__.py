@@ -17,6 +17,7 @@
         "layout.xml",
         "header.xml",
         "footer.xml",
+        "invoice_document.xml",
     ],
     'demo_xml': [],
     'test': [],
