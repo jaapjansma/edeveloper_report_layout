@@ -5,8 +5,14 @@
 		<xpath expr="//div[@class='page']" position="replace">
 			<div class="page">
 
-				<div class="row mt64">
-				    <h2 class="text-right text-uppercase">
+				<div class="row mt32 mb16">
+
+					<div class="col-xs-5 col-xs-offset-3 mt64">
+					    <address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+					    <span t-field="o.partner_id.vat"/>
+					</div>
+<div class="col-xs-4">
+				    <h2 class="text-uppercase mb16">
 					<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
 					<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
 					<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
@@ -15,20 +21,32 @@
 					<span t-if="o.type == 'in_refund'">Supplier Refund</span>
 					<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
 				    </h2>
-				</div>
 
-				<div class="row mt32 mb16">
-					<div class="col-xs-5 col-xs-offset-3">
-					    <address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
-					    <span t-field="o.partner_id.vat"/>
+					<div class="grey-text"><small>
+						Edeveloper<br />
+						Dubceksingel 106<br />
+						6716 RG Ede<br />
+						The Netherlands<br />
+						<br />
+						info@edeveloper.nl<br />
+						+31 (0)318 743 800<br />
+						www.edeveloper.nl<br />
+						<br />
+						KvK: 59199326<br />
+						BTW: NL.108.761.344.B02<br />
+						Bank: NL.42.TRIO.0197.769.381<br />
+					</small>
 					</div>
+</div>
+
+
 				</div>
 				<div class="row" t-if="o.number">
-				    <div class="col-xs-3 text-right"><strong class="text-right">Invoice Number:</strong></div>
+				    <div class="col-xs-3 text-right"><strong class="text-right">Factuur nr.</strong></div>
 				    <div class="col-xs-3"><p t-field="o.number"/></div>
 				</div>
 				<div class="row" t-if="o.date_invoice">
-				    <div class="col-xs-3 text-right"><strong class="text-right">Date:</strong></div>
+				    <div class="col-xs-3 text-right"><strong class="text-right">Datum</strong></div>
 				    <div class="col-xs-3"><p t-field="o.date_invoice"/></div>
 				</div>
 				<div class="row" t-if="o.name">
@@ -72,23 +90,23 @@
                 </tbody>
             </table>
 
-            <div class="row mt-16 mb-32">
-                <div class="col-xs-4 pull-right">
-                    <table class="table table-condensed">
-                        <tr class="border-black">
-                            <td><strong>Total Without Taxes</strong></td>
+            <div class="row mt16 mb32">
+                <div class="col-xs-6 pull-right">
+                    <table class="table table-condensed no-border">
+                        <tr>
+                            <td class="text-right"><strong>Total Without Taxes</strong></td>
                             <td class="text-right">
                                 <strong t-field="o.amount_untaxed" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
                             </td>
                         </tr>
                             <tr t-foreach="o.tax_line" t-as="t">
-				<td><span t-field="t.name" /></td>
+				<td class="text-right"><span t-field="t.name" /></td>
 				<td class="text-right">
 					<span t-field="t.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
 				</td>
 			   </tr>
-                        <tr class="border-black">
-                            <td><strong>Total</strong></td>
+                        <tr>
+                            <td class="text-right"><strong>Total</strong></td>
                             <td class="text-right">
                                  <strong t-field="o.amount_total" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
                             </td>

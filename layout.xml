@@ -13,6 +13,8 @@
 				.border-black td { border-top: 1px solid #f90 !important; } 
 				.table-condensed &gt; thead &gt; tr &gt; th { border-bottom: 1px solid #F90 !important; } 
 				.table-condensed &gt; thead &gt; tr.border-black &gt; th { border-bottom: 1px solid #ddd !important; }
+				.table-condensed.no-border &gt; * &gt; tr &gt; td { border-top: none !important; }
+				.grey-text { color: #606060; }
 			</style>
 		</xpath>
 	</template>
